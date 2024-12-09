@@ -14,6 +14,12 @@ let previousSoupPrice = 0;
 let previousMainDishPrice = 0;
 let previousDrinkPrice = 0;
 
+// previous dish choice storages
+let previousSoup = null;
+let previousMainCourse = null;
+let previousDrink = null;
+let previousDish = null;
+
 // this function hides element with "nothing chosen" id
 function hideNothingChosen() {
     let nothingChosen = document.getElementById("nothing_chosen");
@@ -36,6 +42,26 @@ function showDishes() {
 // this function adds new information about chosen dishes after every button click
 function addDishToOrder(event) {
     let actionTarget = event.currentTarget.parentNode;
+
+    actionTarget.style.borderColor = "tomato";
+    if (actionTarget.parentNode.id == "soup") {
+        if (previousSoup != null) {
+            previousSoup.style.borderColor = "transparent";
+        }
+        previousSoup = actionTarget;
+    }
+    if (actionTarget.parentNode.id == "main_course") {
+        if (previousMainCourse != null) {
+            previousMainCourse.style.borderColor = "transparent";
+        }
+        previousMainCourse = actionTarget;
+    }
+    if (actionTarget.parentNode.id == "drink") {
+        if (previousDrink != null) {
+            previousDrink.style.borderColor = "transparent";
+        }
+        previousDrink = actionTarget;
+    }
 
     showDishes();
     hideNothingChosen();
@@ -129,4 +155,5 @@ resetButton.addEventListener("click", function() {
     previousSoupPrice = 0;
     previousMainDishPrice = 0;
     previousDrinkPrice = 0;
+    previousDish = null;
 })
