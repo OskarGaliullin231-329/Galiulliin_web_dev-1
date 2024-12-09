@@ -155,5 +155,7 @@ resetButton.addEventListener("click", function() {
     previousSoupPrice = 0;
     previousMainDishPrice = 0;
     previousDrinkPrice = 0;
-    previousDish = null;
+    previousSoup = null;
+    previousMainCourse = null;
+    previousDrink = null;
 })
