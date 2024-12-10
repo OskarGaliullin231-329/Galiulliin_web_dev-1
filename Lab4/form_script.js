@@ -155,6 +155,9 @@ resetButton.addEventListener("click", function() {
     previousSoupPrice = 0;
     previousMainDishPrice = 0;
     previousDrinkPrice = 0;
+    previousSoup.style.borderColor = "transparent";
+    previousMainCourse.style.borderColor = "transparent";
+    previousDrink.style.borderColor = "transparent";
     previousSoup = null;
     previousMainCourse = null;
     previousDrink = null;
