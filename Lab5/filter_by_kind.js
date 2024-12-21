@@ -35,7 +35,7 @@ function filterButtonAction(event) {
             }
         }
         dishKinds[prodContainerId] = true;
-        actionTarget.style.backgroundColor = "rgb(200, 255, 190)";
+        actionTarget.className = "kind_choice_btn_click";
         previousClicked = actionTarget;
         return;
     }
@@ -51,7 +51,7 @@ function filterButtonAction(event) {
             }
         }
         dishKinds[prodContainerId] = false;
-        actionTarget.style.backgroundColor = "transparent";
+        actionTarget.style.backgroundColor = "kind_choice_btn";
         return;
     }
 }
