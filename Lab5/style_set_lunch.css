@@ -83,6 +83,22 @@ footer {
             transition: all 0.15s ease;
 }
 
+.product_clicked {
+    padding: 30px 40px 30px 40px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 4px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0,0,0,0.13));
+    background-color: white;
+    border-radius: 35px;
+    border: 2px solid tomato;
+    -webkit-transition: all 0.15s ease;
+            transition: all 0.15s ease;
+}
+
 .product:hover {
     border-color: tomato;
 }
@@ -91,7 +107,17 @@ footer {
     background-color: rgb(250, 200, 200);
 }
 
+.product_clicked button {
+    background-color: rgb(250, 200, 200);
+}
+
 .product img {
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 10px;
+}
+
+.product_clicked img {
     width: 100%;
     border-radius: 35px;
     margin-bottom: 10px;

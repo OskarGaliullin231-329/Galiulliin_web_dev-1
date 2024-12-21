@@ -25,13 +25,9 @@ function filterButtonAction(event) {
             previousClicked.style.backgroundColor = "transparent";
         }
         let prodContainer = document.getElementById(prodContainerId);
-        prodContainer.innerHTML = "";
-        for (dish of dishes_list) {
-            let prodCard = turnDishToCard(dish);
-            if (dish.kind == actionTarget.getAttribute("data-kind") && 
-                dish.category == actionTargetContainer.parentNode.children[2].id) {
-                console.log(`element ${dish.kind}-${dish.category} is found and added`);
-                prodContainer.appendChild(prodCard);
+        for (let prod of prodContainer.children) {
+            if (prod.getAttribute("data-kind") != actionTarget.getAttribute("data-kind")) {
+                prod.style.display = "none";
             }
         }
         dishKinds[prodContainerId] = true;
@@ -42,13 +38,8 @@ function filterButtonAction(event) {
     if (dishKinds[prodContainerId] == true) {
         console.log(`button ${prodContainerId}-filter is UNclicked`);
         let prodContainer = document.getElementById(prodContainerId);
-        prodContainer.innerHTML = "";
-        for (dish of dishes_list) {
-            let prodCard = turnDishToCard(dish);
-            if (dish.category == actionTargetContainer.parentNode.children[2].id) {
-                console.log(`element ${dish.kind}-${dish.category} is found and added`); 
-                prodContainer.appendChild(prodCard);
-            }
+        for (let prod of prodContainer.children) {
+            prod.style.display = "flex";
         }
         dishKinds[prodContainerId] = false;
         actionTarget.style.backgroundColor = "kind_choice_btn";
